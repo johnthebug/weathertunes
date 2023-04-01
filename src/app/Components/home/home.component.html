@@ -1,0 +1,48 @@
+<!-- <div class="container">
+    <h2 class="align-center">Type location to search weather</h2>
+    <div class="align-center">
+        <mat-form-field class="search-box">
+            <mat-icon matPrefix>search</mat-icon>
+            <input #searchInput  class="search-box" type="text" (input)="search()" [(ngModel)]="searchLocation" (keydown.enter)="autoCompleteLocation($event)"
+              placeholder="Ex. Chennai">
+            <mat-icon matSuffix class="icons" (click)="clear()" [ngStyle]="{'display':isInput?'block':'none'}">close</mat-icon>
+        </mat-form-field>
+                  
+        <div class="search-result-list" *ngIf="location$ | async as locations">
+              <div class="results" *ngFor="let location of locations">
+                  {{location.name}}, {{location.region}}, {{location.country}}
+              </div>
+      </div>          
+    </div>
+</div> -->
+<div class="container">
+
+  <form>
+    <h2 class="align-center">Type location and Press enter</h2>
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-icon matPrefix>search</mat-icon>
+      <input type="text" [disabled]="getWeatherData" #searchInput matInput class="search-box" (input)="search()"
+        [(ngModel)]="searchLocation" name="location" (keydown.enter)="autoCompleteLocation($event)"
+        placeholder="Ex. Chennai" [matAutocomplete]="auto">
+      <mat-icon matSuffix class="icons" (click)="clear()"
+        [ngStyle]="{'display':isInput?'block':'none'}">close</mat-icon>
+
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let location of location$ | async" [value]="location" (click)="selectLocation(location)">
+          {{location.name}} , {{location.region}}, {{location.country}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+      </form>
+      <!-- <button class="button" mat-raised-button *ngIf="getWeatherData"
+      (click)="fetchDataComponent()"><mat-icon>travel_explore</mat-icon></button> -->
+</div>
+
+<h1>The search location is : {{ searchLocation }}</h1>
+
+
+<div *ngIf="searchLocation">
+  <ng-template #weathercard>
+
+  </ng-template>
+</div>

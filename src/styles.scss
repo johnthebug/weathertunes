@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+// body {
+    
+//     font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
+
+body {
+    margin: 0;
+    // font-family: 'Dosis', sans-serif;
+    // font-family: 'Karla', sans-serif;
+    font-family: 'Noto Sans Thaana', sans-serif;
+}
+
+body {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --main-color: #ffffff;
+    --accent-color-2: #F1F1F1;
+    --primary-text-color: #191c1c;
+    --secondary-text-color: #4E6969;
+    --pure-black: #000000e0;
+    &.dark {
+        --primary-color: #2c3e50;
+        --secondary-color: #f1f1f1;
+        --main-color: #000000;
+        --accent-color-2: #000000;
+        --primary-text-color: #ecf0f1;
+        --secondary-text-color: #000000;
+    }
+}
+
+
+
+.flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-left {
+    justify-content: left;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.align-center {
+    text-align: center;
+}

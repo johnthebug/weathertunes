@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.share {
+    order: 2;
+}
+
+.logo-space {
+    visibility: visible;
+}
+
+.mat-toolbar {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    
+    border-bottom: 2px solid var(--pure-black);
+}
+
+@media screen and (max-width: 500px) {
+    .logo-space {
+        visibility: hidden;
+    }
+}
